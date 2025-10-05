@@ -1,11 +1,12 @@
 /* eslint-disable jsdoc/check-param-names */
 
 import type { RequestData, REST } from '@discordjs/rest';
-import type {
-	RESTGetAPIChannelThreadMemberResult,
+import {
 	Routes,
+	type RESTGetAPIChannelThreadMemberResult,
 	type RESTGetAPIChannelThreadMembersResult,
-	type Snowflake} from 'discord-api-types/v10';
+	type Snowflake,
+} from 'discord-api-types/v10';
 
 export class ThreadsAPI {
 	public constructor(private readonly rest: REST) {}
