@@ -32,7 +32,6 @@ import {
 	type Snowflake,
 	type RESTPostAPIChannelThreadsJSONBody,
 	type RESTPostAPIChannelThreadsResult,
-	type APIThreadChannel,
 	type RESTPostAPIGuildForumThreadsJSONBody,
 	type RESTPostAPISoundboardSendSoundJSONBody,
 	type RESTPostAPISendSoundboardSoundResult,
@@ -565,7 +564,7 @@ export class ChannelsAPI {
 			body,
 			reason,
 			signal,
-		}) as Promise<APIThreadChannel>;
+		}) as Promise<RESTPostAPIChannelThreadsResult>;
 	}
 
 	/**

@@ -1,12 +1,11 @@
 /* eslint-disable jsdoc/check-param-names */
 
 import type { RequestData, REST } from '@discordjs/rest';
-import {
+import type {
+	RESTGetAPIChannelThreadMemberResult,
 	Routes,
-	type APIThreadMember,
 	type RESTGetAPIChannelThreadMembersResult,
-	type Snowflake,
-} from 'discord-api-types/v10';
+	type Snowflake} from 'discord-api-types/v10';
 
 export class ThreadsAPI {
 	public constructor(private readonly rest: REST) {}
@@ -78,7 +77,10 @@ export class ThreadsAPI {
 		userId: Snowflake,
 		{ auth, signal }: Pick<RequestData, 'auth' | 'signal'> = {},
 	) {
-		return this.rest.get(Routes.threadMembers(threadId, userId), { auth, signal }) as Promise<APIThreadMember>;
+		return this.rest.get(Routes.threadMembers(threadId, userId), {
+			auth,
+			signal,
+		}) as Promise<RESTGetAPIChannelThreadMemberResult>;
 	}
 
 	/**
